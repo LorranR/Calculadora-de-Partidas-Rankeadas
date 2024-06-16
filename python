@@ -1,0 +1,30 @@
+def main():
+
+    vitorias =int (input("Digite quantas patidas você ganhou! "))
+    derrotas =int (input("Digite quantas patidas você perdeu! "))
+
+    saldo = ranking(vitorias,derrotas)
+
+
+    if  saldo < 10:
+        nivel = "Ferro"
+    elif 11 <= saldo <= 20:
+        nivel = "Bronze"
+    elif 21 <= saldo <= 50:
+        nivel = "Prata"
+    elif 51 <= saldo <= 80:
+        nivel = "Ouro"
+    elif 81 <= saldo >= 90:
+        nivel = "Diamante"
+    elif 91 >= saldo >= 100:
+        nivel = "Lendario"
+    else :
+        nivel = "Imortal"
+
+    print(f"O Herói tem de saldo de {saldo} vitórias e está no nível de {nivel}")
+
+def ranking(vitorias, derrotas ):
+    saldo = vitorias - derrotas
+    return saldo
+
+main()
